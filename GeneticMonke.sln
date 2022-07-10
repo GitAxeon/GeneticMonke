@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GeneticMonke", "GeneticMonke\GeneticMonke.vcxproj", "{F814C3B8-12D3-414A-B144-4C44435F11B9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F814C3B8-12D3-414A-B144-4C44435F11B9}.Debug|x64.ActiveCfg = Debug|x64
+		{F814C3B8-12D3-414A-B144-4C44435F11B9}.Debug|x64.Build.0 = Debug|x64
+		{F814C3B8-12D3-414A-B144-4C44435F11B9}.Release|x64.ActiveCfg = Release|x64
+		{F814C3B8-12D3-414A-B144-4C44435F11B9}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FCC59CAA-ED74-4A9A-9A4B-B1A4A83A7B87}
+	EndGlobalSection
+EndGlobal
