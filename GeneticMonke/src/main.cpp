@@ -50,9 +50,10 @@ struct Chromosome
 	friend std::ostream& operator<<(std::ostream& stream, const Chromosome& data);
 
 	std::string Genes;
-	float Fitness = 0;
-	float Normalized_fitness = 0.0f;
-	float Accumulated_fitness = 0.0f;
+	float percentage = .0f;
+	float Fitness = .0f;
+	float Normalized_fitness = .0f;
+	float Accumulated_fitness = .0f;
 };
 
 std::ostream& operator<<(std::ostream& stream, const Chromosome& data)
@@ -81,22 +82,36 @@ int main(int argc, char* argv[])
 {	
 	// Settings
 	std::string input_phrase;
-	int population_size = 10;
-	float mutation_percentage = 0.07f;
+	size_t population_size = 50;
+	float mutation_percentage = 0.06f;
 	bool printing = true;
 
 	assert(argc >= 2);
-
-	input_phrase = argv[1];
-
-	if (argc > 2)
+	try
 	{
-		population_size = std::stoi(argv[2]);
+		if (argc > 1)
+		{
+			input_phrase = argv[1];
+		}
+		else
+		{
+			input_phrase = "Kanasalaatti";
+		}
+		
+		if (argc > 2)
+		{
+			population_size = std::stoi(argv[2]);
+		}
+
+		if (argc > 3)
+		{
+			mutation_percentage = std::stof(argv[3]);
+		}
 	}
-
-	if (argc > 3)
+	catch (std::exception& exception)
 	{
-		mutation_percentage = std::stof(argv[3]);
+		std::cout << "Invalid input. Make sure you input population size as unsigned integer and mutation rate as value between 0 and 1" << std::endl;
+		std::abort();
 	}
 
 	if (argc > 4)
@@ -232,5 +247,8 @@ int main(int argc, char* argv[])
 
 	std::cout << "Execution time: " << duration.count() << "ms" << std::endl;
 	std::cout << "Generations passed: " << generation_count << std::endl;
+
+	std::cin.get();
+
 	return (0);
 }
